@@ -17,7 +17,8 @@ const urlForm = () => {
 
             let tinyUrlRes = urlRes.result.short_link;
             setTinyUrl(tinyUrlRes);
-            window.location.assign('/url-result');
+            <Redirect to='/url-result' />
+            // window.location.assign('/url-result');
         } catch (err) {
             alert(err);
         }     

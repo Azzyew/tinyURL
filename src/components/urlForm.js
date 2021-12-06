@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import UrlResult from './UrlResult';
 
 const UrlGetForm = () => {
 
@@ -15,7 +14,7 @@ const UrlGetForm = () => {
             let reqUrl = `${baseUrl}shorten?url=${initialUrl}`
             let { data } = await axios.get(reqUrl);
             
-            setShort(data.result.short_link);
+            setShort(data.result.full_short_link);
 
         } catch (err) {
             alert(err);
@@ -32,8 +31,7 @@ const UrlGetForm = () => {
             </form>
             
             <div>
-                {/* {short !== '' ? <UrlResult data={short} /> : null} */}
-                <h2>{short}</h2>
+                <h2><a href={short}>{short}</a></h2>
             </div>
 
         </div>

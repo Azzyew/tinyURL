@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import UrlResult from './UrlResult';
 
-const urlForm = () => {
+const UrlGetForm = () => {
 
     const baseUrl = "https://api.shrtco.de/v2/";
     const [initialUrl, setInitialUrl] = useState('');
-    const [tinyUrl, setTinyUrl] = useState('');
+    const [short, setShort] = useState('');
 
     const handleUrl = async(e) => {
         e.preventDefault();
 
         try {
             let reqUrl = `${baseUrl}shorten?url=${initialUrl}`
-            let urlRes = await axios.get(reqUrl);
+            let { data } = await axios.get(reqUrl);
+            
+            setShort(data.result.short_link);
 
-            let tinyUrlRes = urlRes.result.short_link;
-            setTinyUrl(tinyUrlRes);
-            <Redirect to='/url-result' />
-            // window.location.assign('/url-result');
         } catch (err) {
             alert(err);
         }     
@@ -29,11 +27,17 @@ const urlForm = () => {
             <h3>Easy-to-get compact and short links</h3>
             <img></img>
             <form>
-                <input type="text" className="url"/>
+                <input type="text" className="url" value={initialUrl} onChange={e => setInitialUrl(e.target.value)}/>
                 <button type="submit" onClick={handleUrl}>Tinify!</button>
             </form>
+            
+            <div>
+                {/* {short !== '' ? <UrlResult data={short} /> : null} */}
+                <h2>{short}</h2>
+            </div>
+
         </div>
     )
 }
 
-export default urlForm;
+export default UrlGetForm;

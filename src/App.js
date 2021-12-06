@@ -1,19 +1,13 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch, 
-  Route
-} from 'react-router-dom';                          
+import React from 'react';                       
 import './App.css';
-import urlForm from './components/urlForm';
-import urlResult from './components/urlResult';
+import UrlGetForm from './components/UrlForm';
+import UrlResult from './components/UrlResult';
 
 // colocar dark theme no futuro
 
 function App() {
   return (
-    <Router>
-     {/* <div className="App">
+    <div className="App">
     <header>
       <h2>TinyURL</h2>
       <h3>
@@ -22,20 +16,9 @@ function App() {
       </header>
     
       <main>
-        <urlForm />
+        <UrlGetForm />
       </main>
-    </div>  */}
-
-    <Switch>
-      <Route path="/">
-        <urlForm />
-      </Route>
-      <Route path="/url-result">
-        <urlResult />
-      </Route>
-    </Switch>
-    </Router>
-    
+    </div>
   );
 }
 

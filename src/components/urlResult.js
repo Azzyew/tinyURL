@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './urlForm';
+import './UrlForm';
 
-const urlResult = () => {
+const UrlResult = (props) => {
     return(
         <div className="resultContainer">
-            <h2>{tinyUrl}</h2>
+            <h2>{props.short}</h2>
         </div>
     )
 }
 
-export default urlResult;
+export default UrlResult;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import hero from '../assets/hero.png';
+import '../Global.css';
 
 const UrlGetForm = () => {
 
@@ -22,19 +24,27 @@ const UrlGetForm = () => {
     }
  
     return(
-        <div className="container">
-            <h3>Easy-to-get compact and short links</h3>
-            <img></img>
-            <form>
-                <input type="text" className="url" value={initialUrl} onChange={e => setInitialUrl(e.target.value)}/>
-                <button type="submit" onClick={handleUrl}>Tinify!</button>
-            </form>
+        <>
+            <div className="container">
+                
+                <img src={hero} alt="Person using a computer" />
             
-            <div>
-                <h2><a href={short}>{short}</a></h2>
+                <div className="formContainer">
+                    <h3>Easy-to-get compact and short links</h3>
+                    <img></img>
+                    <form>
+                        <input type="text" className="url" value={initialUrl} onChange={e => setInitialUrl(e.target.value)}/>
+                        <button type="submit" onClick={handleUrl}>Tinify!</button>
+                    </form>
+                </div>
+                
             </div>
 
-        </div>
+            <div>
+            <h2>Your link will appear here:</h2>
+                <h3><a href={short}>{short}</a></h3>
+            </div>
+        </>
     )
 }
 

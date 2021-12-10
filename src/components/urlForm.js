@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import hero from '../assets/hero.png';
 import '../Global.css';
@@ -31,7 +31,6 @@ const UrlGetForm = () => {
             
                 <div className="formContainer">
                     <h3>Easy-to-get compact and short links</h3>
-                    <img></img>
                     <form>
                         <input type="text" className="url" value={initialUrl} onChange={e => setInitialUrl(e.target.value)}/>
                         <button type="submit" onClick={handleUrl}>Tinify!</button>

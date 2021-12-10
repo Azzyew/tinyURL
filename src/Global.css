@@ -28,17 +28,23 @@ header a {
   font-weight: normal;
 }
 
+header a:hover {
+  transition: all 0.25s ease-out;
+  font-size: 110%;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 5% 30%;
+  padding: 2% 30%;
 }
 
-.container h3 {
+.container h2 {
   font-size: 3rem;
   font-weight: bold;
+  padding-bottom: 2%;
 }
 
 .formContainer form {
@@ -67,4 +73,73 @@ header a {
   border-radius: 8px;
   width: 80%;
   padding: 1% 0;
+  margin-right: 2%;
+}
+
+.urlResult h3 {
+  font-size: 1.8rem;
+  padding-bottom: 2%;
+}
+
+.urlResult a {
+  color: #f6836b;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.urlResult a:hover {
+  transition: all 0.25s ease-out;
+  font-size: 3.3rem;
+}
+
+@media screen and (max-width: 992px) {
+  .container h2 {
+    font-size: 2.5rem;
+  }
+  .urlResult h3 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container h2 {
+    font-size: 2rem;
+  }
+  .urlResult h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    flex-direction: column;
+  }
+  img {
+    height: 40vh;
+    width: 70vw;
+  }
+  .container {
+    padding: 2% 5%;
+  }
+  .container h2 {
+    font-size: 1rem;
+  }
+  .formContainer form {
+    width: 100%;
+  }
+  .formContainer button {
+    font-size: 1rem;
+    padding: 1% 8px;
+  }
+  .formContainer input {
+    font-size: 1rem;
+  }
+  .urlResult {
+    margin-top: 5%;
+  }
+  .urlResult h3 {
+    font-size: 0.8rem;
+  }
+  .urlResult a {
+    font-size: 1rem;
+  }
 }

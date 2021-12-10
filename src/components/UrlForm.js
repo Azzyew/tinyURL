@@ -30,7 +30,7 @@ const UrlGetForm = () => {
                 <img src={hero} alt="Person using a computer" />
             
                 <div className="formContainer">
-                    <h3>Easy-to-get compact and short links</h3>
+                    <h2>Easy-to-get compact and short links</h2>
                     <form>
                         <input type="text" className="url" value={initialUrl} onChange={e => setInitialUrl(e.target.value)}/>
                         <button type="submit" onClick={handleUrl}>Tinify!</button>
@@ -39,8 +39,8 @@ const UrlGetForm = () => {
                 
             </div>
 
-            <div>
-            <h2>Your link will appear here:</h2>
+            <div className="urlResult">
+            <h3>Your link will appear here:</h3>
                 <h3><a href={short}>{short}</a></h3>
             </div>
         </>
